@@ -1,0 +1,43 @@
+.bg-indigo-200{
+    background-color:#c29ffa !important;
+}
+.bg-purple-300{
+    background-color:#a98eda !important;
+}
+.bg-pink-100{
+    background-color: #f7d6e6 !important;
+}
+.bg-pink-400{
+    background-color: #de5c9d !important;
+}
+.bg-yellow-400{
+    color: #ffda6a !important;
+}
+.text-pink-100{
+    color: #f7d6e6;
+}
+.text-pink-700{
+    color: #801f4f;
+}
+.text-pink-400{
+    color: #de5c9d !important;
+}
+.text-yellow-400{
+    color: #ffda6a !important;
+}
+
+.opacity-75{
+    opacity: 1;
+}
+
+.gold-icon{
+    color: #FFD700;
+}
+
+.border-pink{
+    border-color: #de5c9d !important;
+}
+body{
+    font-family: "Noto Sans", sans-serif !important;
+    min-height: 100vh;
+}
