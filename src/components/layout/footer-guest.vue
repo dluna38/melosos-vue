@@ -25,7 +25,7 @@ import IconWpp from '../icons/IconWpp.vue';
 
       <p class="text-pink-700 mb-1">&copy; 2024 Melosos Detalles Perfectos. Todos los derechos reservados.</p>
       <div class="mt-1" style="font-size: small;">
-        <a href="/login" class="text-pink-400 hover:text-yellow-500 mx-2">Administración</a>
+        <RouterLink to="/login" class="text-pink-400 hover:text-yellow-500 mx-2">Administración</RouterLink>
       </div>
     </div>
   </footer>
