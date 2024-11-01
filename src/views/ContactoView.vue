@@ -74,7 +74,7 @@
                     <div style="max-width:100%;overflow:hidden;height:500px;">
                         <div id="my-map-display" style="height:100%; width:100%;max-width:100%;"><iframe
                                 style="height:100%;width:100%;border:0;" frameborder="0"
-                                src="https://www.google.com/maps/embed/v1/place?q=Melosos&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                                :src=mapurl></iframe>
                         </div>
                     </div>
                 </div>
@@ -100,6 +100,8 @@ const formulario = ref({
     nombre: '',
     mensaje: ''
 })
+
+const mapurl = 'https://www.google.com/maps/embed/v1/place?q=Melosos&key='+import.meta.env.VITE_GOOGLE_KEY
 const wppLink = 'https://wa.me/573135996884';
 const enviarMensaje = () => {
     // Aquí iría la lógica para enviar el mensaje
