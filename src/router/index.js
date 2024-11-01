@@ -12,6 +12,7 @@ import CatalogoView from '@/views/CatalogoView.vue'
 import TalleresView from '@/views/TalleresView.vue'
 
 const router = createRouter({
+  mode: 'history',
   linkExactActiveClass:'nav-link active',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
