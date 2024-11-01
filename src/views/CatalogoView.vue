@@ -29,7 +29,7 @@
                         <div class="card-body d-flex align-items-start flex-column" style="height: 200px;">
                             <h5 class="card-title">{{ producto.nombre }}</h5>
                             <p class="card-text flex-grow-1" id="text-card">{{ producto.descripcion }}</p>
-                            <a href="#" class="btn btn-primary align-self-end">Solicitar</a>
+                            <button type="button"  class="btn btn-primary align-self-end" @click="enviarMensaje(producto.nombre)">Solicitar</button>
                         </div>
                     </div>
                 </div>
@@ -76,6 +76,16 @@ const seleccionarCategoria = (id) => {
 const productosFiltrados = computed(() => {
     return productos.value.filter(producto => producto.categoriaId === categoriaSeleccionada.value)
 })
+
+const wppLink = 'https://wa.me/573135996884';
+const enviarMensaje = (producto) => {
+    console.log(producto);
+    // Aquí iría la lógica para enviar el mensaje
+    let url = wppLink + '?text=' + encodeURI(`Hola, estoy interesado/a en: `+producto);
+
+    window.open(url, '_blank');
+    // Reiniciar el formulario
+}
 </script>
 
 <style scoped>

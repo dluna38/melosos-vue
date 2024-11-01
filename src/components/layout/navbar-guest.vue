@@ -14,7 +14,7 @@
                         <RouterLink to="/" class="nav-link">Inicio</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink to="/catalogo" class="nav-link">Catalogo</RouterLink>
+                        <RouterLink to="/catalogo" class="nav-link">Catálogo</RouterLink>
                     </li>
                     <li class="nav-item">
                         <RouterLink to="/talleres" class="nav-link">Talleres</RouterLink>
