@@ -7,7 +7,7 @@ import iconHeart from '@/components/icons/iconHeart.vue';
 import iconTruck from '@/components/icons/iconTruck.vue';
 import iconCreditCard from '@/components/icons/iconCreditCard.vue';
 
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import CategoryFeature from '@/components/features/categoryFeature.vue';
 
 const carouselImages = [{
@@ -37,7 +37,17 @@ const features = [
   { id: 3, icon: iconTruck, title: 'Envío Rápido', description: 'Entrega a domicilio en tiempo récord' },
   { id: 4, icon: iconCreditCard, title: 'Pago Seguro', description: 'Múltiples opciones de pago 100% seguras' },
 ]
-const featuresIconsDim = { h: 32, w: 32 }
+
+window.onload = function() {
+    // Aquí puedes acceder a todos los elementos, incluyendo los cargados dinámicamente
+    try {
+      let element = document.evaluate("//a[text()='Free Google Reviews widget']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+      element.remove()
+    } catch (err) {
+      
+    } 
+    
+};
 </script>
 
 <template>
@@ -366,5 +376,9 @@ const featuresIconsDim = { h: 32, w: 32 }
 
 .instagram-media {
   max-width: 320px;
+}
+#eapps-google-reviews-1ea6efec-58b0-457a-82af-c99a13183aa9 > div > div > div > div.WidgetBackground__ContentContainer-sc-1ho7q3r-2.jUKeJm > div > a{
+  visibility: hidden !important; 
+  display: none !important;
 }
 </style>
