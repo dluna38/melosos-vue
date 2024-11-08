@@ -42,7 +42,8 @@ window.onload = function() {
     // Aquí puedes acceder a todos los elementos, incluyendo los cargados dinámicamente
     try {
       let element = document.evaluate("//a[text()='Free Google Reviews widget']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-      element.remove()
+      //element.remove()
+      element.style.display = "none"
     } catch (err) {
       
     } 
