@@ -70,8 +70,12 @@ const featuresIconsDim = { h: 32, w: 32 }
         </div>
       </div>
     </section>
+    <section class="py-4">
+      <component is="script" src="https://static.elfsight.com/platform/platform.js" async></component>
+      <div class="elfsight-app-1ea6efec-58b0-457a-82af-c99a13183aa9" data-elfsight-app-lazy></div>
+    </section>
   </main>
-  <div id="insta" class="row my-4 justify-content-evenly">
+  <div id="insta" class="row justify-content-evenly bg-pink-100 py-4 mb-3">
     <div class="col-auto ms-4">
       <blockquote class="instagram-media"
         data-instgrm-permalink="https://www.instagram.com/reel/DBeUDC8PSA7/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -250,7 +254,8 @@ const featuresIconsDim = { h: 32, w: 32 }
             <a href="https://www.instagram.com/reel/DAQndDHJbLR/?utm_source=ig_embed&amp;utm_campaign=loading"
               style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
               target="_blank">Una publicación compartida por Melosos Detalles Perfectos 18 años ayudando a
-              sorprender❤️😍 (@melososdetallesperfectos)</a></p>
+              sorprender❤️😍 (@melososdetallesperfectos)</a>
+          </p>
         </div>
       </blockquote>
     </div>
@@ -340,7 +345,8 @@ const featuresIconsDim = { h: 32, w: 32 }
             <a href="https://www.instagram.com/reel/C__L3wXyURZ/?utm_source=ig_embed&amp;utm_campaign=loading"
               style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
               target="_blank">Una publicación compartida por Melosos Detalles Perfectos 18 años ayudando a
-              sorprender❤️😍 (@melososdetallesperfectos)</a></p>
+              sorprender❤️😍 (@melososdetallesperfectos)</a>
+          </p>
         </div>
       </blockquote>
     </div>
