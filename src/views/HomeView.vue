@@ -38,16 +38,33 @@ const features = [
   { id: 4, icon: iconCreditCard, title: 'Pago Seguro', description: 'Múltiples opciones de pago 100% seguras' },
 ]
 
-window.onload = function() {
-    // Aquí puedes acceder a todos los elementos, incluyendo los cargados dinámicamente
-    try {
-      let element = document.evaluate("//a[text()='Free Google Reviews widget']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-      //element.remove()
-      element.style.display = "none"
-    } catch (err) {
-      
+
+function ocultarElementoDuplicado(elemento) {
+  const intervalo = setInterval(() => {
+    const elementoABuscar = document.querySelector(elemento);
+    if (elementoABuscar) {
+      elementoABuscar.style.display = "none";
+
+      clearInterval(intervalo); // Detenemos el intervalo
     } 
+  }, 1500);
+}
+function test(params) {
+  let ele = document.querySelector('a[href="https://elfsight.com/google-reviews-widget/?utm_source=websites&utm_medium=clients&utm_content=google-reviews&utm_term=localhost&utm_campaign=free-widget"]')
+  console.log(ele);
+  ele.style.display = "none";
+  console.log(ele.style.display);
+}
+window.onload = function () {
+  // Aquí puedes acceder a todos los elementos, incluyendo los cargados dinámicamente
+  try {
+    ocultarElementoDuplicado('a[href="https://elfsight.com/instagram-feed-instashow/?utm_source=websites&utm_medium=clients&utm_content=instashow&utm_term=localhost&utm_campaign=free-widget"]')
+    ocultarElementoDuplicado('a[href="https://elfsight.com/google-reviews-widget/?utm_source=websites&utm_medium=clients&utm_content=google-reviews&utm_term=localhost&utm_campaign=free-widget"]')
+
+  } catch (err) {
     
+  }
+
 };
 </script>
 
@@ -85,7 +102,11 @@ window.onload = function() {
       <component is="script" src="https://static.elfsight.com/platform/platform.js" async></component>
       <div class="elfsight-app-1ea6efec-58b0-457a-82af-c99a13183aa9" data-elfsight-app-lazy></div>
     </section>
+    <section class="py-1 bg-pink-100 mb-3">
+      <div class="elfsight-app-44acc479-269e-462e-b75f-cfacf944bc81" data-elfsight-app-lazy></div>
+    </section>
   </main>
+  <!--
   <div id="insta" class="row justify-content-evenly bg-pink-100 py-4 mb-3">
     <div class="col-auto ms-4">
       <blockquote class="instagram-media"
@@ -363,6 +384,7 @@ window.onload = function() {
     </div>
     <component is="script" src="//www.instagram.com/embed.js"></component>
   </div>
+  -->
   <FooterGuest />
 
 </template>
@@ -377,9 +399,5 @@ window.onload = function() {
 
 .instagram-media {
   max-width: 320px;
-}
-#eapps-google-reviews-1ea6efec-58b0-457a-82af-c99a13183aa9 > div > div > div > div.WidgetBackground__ContentContainer-sc-1ho7q3r-2.jUKeJm > div > a{
-  visibility: hidden !important; 
-  display: none !important;
 }
 </style>
