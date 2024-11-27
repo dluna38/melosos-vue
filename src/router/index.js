@@ -12,37 +12,37 @@ import CatalogoView from '@/views/CatalogoView.vue'
 import TalleresView from '@/views/TalleresView.vue'
 
 const router = createRouter({
-  linkExactActiveClass:'nav-link active',
+  linkExactActiveClass: 'nav-link active',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      meta:{protected:false},
+      meta: { protected: false },
       component: Home
     },
     {
       path: '/catalogo',
       name: 'catalogo',
-      meta:{protected:false},
+      meta: { protected: false },
       component: CatalogoView
     },
     {
       path: '/talleres',
       name: 'talleres',
-      meta:{protected:false},
+      meta: { protected: false },
       component: TalleresView
     },
     {
       path: '/login',
       name: 'login',
-      meta:{protected:false},
+      meta: { protected: false },
       component: LoginView
     },
     {
       path: '/contacto',
       name: 'contacto',
-      meta:{protected:false},
+      meta: { protected: false },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -52,44 +52,49 @@ const router = createRouter({
       path: '/administracion',
       name: 'administracion',
       redirect: '/administracion/inicio',
-      meta:{protected:true},
+      meta: { protected: true },
       component: AdminView,
-      children:[
+      children: [
         {
-          path:'inicio',
+          path: 'inicio',
           component: () => import('../views/AdminInicioView.vue')
         },
         {
-          path:'pedidos',
-          name:'pedidos',
+          path: 'pedidos',
+          name: 'pedidos',
           //component: PedidosView
           component: () => import('../views/Pedidos/PedidosView.vue')
         },
         {
-          path:'pedidos/nuevo',
+          path: 'pedidos/nuevo',
           //component: NewPedidoView
           component: () => import('../views/Pedidos/NewPedidoView.vue')
         },
         {
-          name:'detallePedido',
-          path:'pedidos/:codigo',
+          name: 'detallePedido',
+          path: 'pedidos/:codigo',
           //component: DetallePedidoView,
           component: () => import('../views/Pedidos/DetallePedidoView.vue'),
-          beforeEnter:async (to, from) => {
-            const returnTo = {name:'pedidos'};
+          beforeEnter: async (to, from) => {
+            const returnTo = { name: 'pedidos' };
             await getPedidoDetail(to.params.codigo).then((res) => {
               to.params.data = res.data;
-            }).catch((error)=>{
-              return  {name:'pedidos'};
+            }).catch((error) => {
+              return { name: 'pedidos' };
             })
 
-            if(Array.isArray(to.params.data.pedido)){
-              router.push({name:'pedidos'});
+            if (Array.isArray(to.params.data.pedido)) {
+              router.push({ name: 'pedidos' });
             }
           },
         },
       ]
     },
+    /*{
+      path: '/sitemap.xml',
+      name: 'NotFound',
+      component: () => import('../assets/sitemap.xml')
+    },*/
     { path: '/:pathMatch(.*)', name: 'NotFound', component: NotFoundView },
   ]
 })
@@ -109,11 +114,11 @@ async function userIsAuthenticated() {
 router.beforeEach(async (to, from) => {
   // ...
   // explicitly return false to cancel the navigation
-  if(!to.meta.protected){
+  if (!to.meta.protected) {
     return true;
   }
   let userAuth = await userIsAuthenticated();
-  if(to.meta.protected && !userAuth){
+  if (to.meta.protected && !userAuth) {
     return '/';
   }
 })

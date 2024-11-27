@@ -49,12 +49,6 @@ function ocultarElementoDuplicado(elemento) {
     } 
   }, 1500);
 }
-function test(params) {
-  let ele = document.querySelector('a[href="https://elfsight.com/google-reviews-widget/?utm_source=websites&utm_medium=clients&utm_content=google-reviews&utm_term=localhost&utm_campaign=free-widget"]')
-  console.log(ele);
-  ele.style.display = "none";
-  console.log(ele.style.display);
-}
 window.onload = function () {
   // Aquí puedes acceder a todos los elementos, incluyendo los cargados dinámicamente
   try {
